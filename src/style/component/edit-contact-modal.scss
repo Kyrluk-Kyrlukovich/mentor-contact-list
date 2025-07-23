@@ -1,0 +1,11 @@
+.edit-contact-modal {
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .btn {
+            width: 100%;
+        }
+    }
+}

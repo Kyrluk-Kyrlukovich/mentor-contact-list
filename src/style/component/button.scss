@@ -1,0 +1,24 @@
+.btn {
+    border: none;
+    border-radius: 0.8rem;
+    transition: 0.3s ease;
+    cursor: pointer;
+    width: 10rem;
+    height: 4rem;
+    border: 2px solid transparent;
+
+    &--primary {
+        background-color: #3b82f6;
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            outline: none;
+            background-color: #f3f7fe;
+            color: #3b82f6;
+            border-color: rgb(0, 115, 230);
+
+            box-shadow: 0 0 0 4px #3b83f65f;
+        }
+    }
+}

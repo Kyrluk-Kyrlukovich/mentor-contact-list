@@ -1,0 +1,58 @@
+.dropdown {
+    display: grid;
+    grid-template-rows: 2rem 0fr;
+    transition: grid-template-rows 0.3s ease;
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+
+    &.active {
+        grid-template-rows: 2rem 1fr;
+
+        .dropdown {
+            &__head {
+                &::after {
+                    transform: translateY(-50%) rotate(0deg); // скрыть вертикальную
+                }
+            }
+
+            &__body {
+                margin-top: 1rem;
+            }
+        }
+    }
+
+    &__head {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 1.6rem;
+        font-weight: bold;
+        cursor: pointer;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            width: 1.2rem;
+            height: 0.2rem;
+            background: #222;
+            transition: transform 0.2s;
+        }
+
+        &::after {
+            transform: translateY(-50%) rotate(90deg); // вертикальная
+        }
+
+        &::before {
+            transform: translateY(-50%) rotate(0deg); // горизонтальная
+        }
+    }
+
+    &__body {
+        overflow: hidden;
+        transition: margin 0.3s ease;
+    }
+}

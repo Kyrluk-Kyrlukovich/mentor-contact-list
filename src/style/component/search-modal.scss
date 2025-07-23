@@ -1,0 +1,11 @@
+.search-modal {
+    &__list {
+        margin-top: 1rem;
+        padding: 0.225rem 0;
+        display: flex;
+        flex-direction: column;
+
+        height: 400px;
+        overflow: auto;
+    }
+}

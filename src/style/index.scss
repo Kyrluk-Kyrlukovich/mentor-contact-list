@@ -1,0 +1,98 @@
+@use './component/form-add-contact.scss';
+@use './component/input.scss';
+@use './component/button.scss';
+@use './component/contact-table.scss';
+@use './component/dropdown.scss';
+@use './component/contact-item.scss';
+@use './component/modal.scss';
+@use './component/search-modal.scss';
+@use './component/edit-contact-modal.scss';
+
+html {
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-size: 1.4rem;
+    color: #1d2126;
+    background: #e8e8e8;
+}
+
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+article>*+* {
+    margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+.page-content {
+    padding: 0 2.5rem;
+
+    &__title {
+        margin-top: 3rem;
+        font-size: 3.2rem;
+        text-align: center;
+    }
+
+    &__subtitle {
+        margin-top: 1.5rem;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    &__table {
+        margin-top: 3rem;
+        justify-content: center;
+    }
+}

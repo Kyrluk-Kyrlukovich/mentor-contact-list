@@ -13,9 +13,19 @@ module.exports = {
         static: "./dist",
         hot: true,
     },
+    module: {
+        rules: [
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader",
+                ],
+            },
+        ],
+    },
     plugins: [
-        new HtmlWebpackPlugin({
-            title: "Hot Module Replacement",
-        }),
+        new HtmlWebpackPlugin({template: './index.html'}),
     ],
 };

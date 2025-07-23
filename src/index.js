@@ -63,11 +63,11 @@ const listContacts = {
         this.items = this.items.map((el) => {
             if (el.name === name) {
                 return { ...newValue };
-            } 
+            }
 
-            return el
+            return el;
         });
-        console.log(this.items)
+        console.log(this.items);
         localStorage.setItem("items", JSON.stringify(this.items));
     },
 
@@ -183,6 +183,15 @@ const customValidateOnlyLetters = (field) => {
     return isValidField;
 };
 
+const customValidateOnlyLatin = (field) => {
+    let isValidField = true;
+    if (!field) isValidField = false;
+    const value = field.value.trim();
+    if (value) isValidField = /^[a-zA-Z\s]+$/.test(value);
+
+    return isValidField;
+};
+
 const validateUniqueName = (field, list) => {
     if (!field) return false;
     return list.every((item) => item.name !== field.value);
@@ -251,6 +260,17 @@ const initForm = (form) => {
                 !customValidateOnlyLetters(input)
             ) {
                 showErrorField(field, "Field should contain only letters");
+                isValid = false;
+            }
+
+            if (
+                inputRules.includes("only-latin") &&
+                !customValidateOnlyLatin(input)
+            ) {
+                showErrorField(
+                    field,
+                    "Field should contain only latin letters"
+                );
                 isValid = false;
             }
 
@@ -392,7 +412,7 @@ const initSaveEditForm = () => {
         const oldName = btnSave.getAttribute("data-save-item");
         const form = document.querySelector(".js-form-contact-edit");
 
-        if (oldName && isValidSaveEditForm(form)) {
+        if (oldName && isValidSaveEditForm(form, oldName)) {
             const newItem = {
                 name: nameField.value,
                 vacancy: vacancyField.value,

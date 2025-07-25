@@ -498,4 +498,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initSaveEditForm();
 
     contactListHtml.drawContactList();
+
+    alert('proverka ci/cd')
 });
